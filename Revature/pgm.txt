@@ -1,0 +1,185 @@
+Prime number and addition of digits gives prime number
+
+
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+    
+       static void isPrime(int n){
+           int flag=0;
+           if(n==0 || n==1){
+               System.out.println("Not a prime");
+           }
+           
+           else{
+		    for(int i=2;i<=n/2;i++){
+		     if(n%i==0){
+		        System.out.println("Not a prime");
+		        flag=1;
+		        break;
+		    }
+		    }
+           }
+           
+           if(flag==0){
+               System.out.println("prime");
+           }
+		}
+		
+		static void addPrime(int n){
+		    int sum=0;
+		    while(n>0){
+		    
+		    int dig=n%10;
+		    sum+=dig;
+		    n=n/10;}
+		    
+		    System.out.println(sum);
+		    isPrime(sum);
+		}
+		
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		isPrime(n);
+		addPrime(n);
+	}
+}
+
+
+Quadratic equation
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    // value a, b, and c
+    double a = 2.3, b = 4, c = 5.6;
+    double root1, root2;
+
+    // calculate the determinant (b2 - 4ac)
+    double determinant = b * b - 4 * a * c;
+
+    // check if determinant is greater than 0
+    if (determinant > 0) {
+
+      // two real and distinct roots
+      root1 = (-b + Math.sqrt(determinant)) / (2 * a);
+      root2 = (-b - Math.sqrt(determinant)) / (2 * a);
+
+      System.out.format("root1 = %.2f and root2 = %.2f", root1, root2);
+    }
+
+    // check if determinant is equal to 0
+    else if (determinant == 0) {
+
+      // two real and equal roots
+      // determinant is equal to 0
+      // so -b + 0 == -b
+      root1 = root2 = -b / (2 * a);
+      System.out.format("root1 = root2 = %.2f;", root1);
+    }
+
+    // if determinant is less than zero
+    else {
+
+      // roots are complex number and distinct
+      double real = -b / (2 * a);
+      double imaginary = Math.sqrt(-determinant) / (2 * a);
+      System.out.format("root1 = %.2f+%.2fi", real, imaginary);
+      System.out.format("\nroot2 = %.2f-%.2fi", real, imaginary);
+    }
+  }
+}
+
+
+Prime numbers in the given range
+public class Main
+ {
+   public static void main (String[]args)
+   {
+
+     int lower = 1, upper = 20;
+
+
+     for (int i = lower; i <= upper; i++)
+       if (isPrime (i))
+        System.out.println (i);
+   }
+
+   static boolean isPrime (int n)
+   {
+    
+
+     // 0, 1 negative numbers are not prime
+     if (n < 2)
+       return false;
+
+     // checking the number of divisors b/w 1 and the number n-1
+     for (int i = 2; i < n; i++)
+       {
+     if (n % i == 0)
+        return false;
+       }
+
+     // if reached here then must be true
+     return true;
+   }
+ }
+
+
+Second least
+
+import java.io.*;
+ 
+class Main
+{
+    static void print2Smallest(int arr[])
+    {
+        int first, second, arr_size = arr.length;
+        first=second=arr[0];
+        for (int i = 0; i < arr_size ; i ++)
+        {
+            if (arr[i] < first)
+            {
+                second = first;
+                first = arr[i];
+            }
+ 
+            else if (arr[i] < second && arr[i] != first)
+                second = arr[i];
+        }
+       
+            System.out.println("The smallest element is " +
+                               first + " and second Smallest" +
+                               " element is " + second);
+    }
+ 
+    public static void main (String[] args)
+    {
+        int arr[] = {12, 13, 1, 10, 34, 1};
+        print2Smallest(arr);
+    }
+}
+
+
+
+
+
+
+
+
+for _ in range(int(input())):
+    num=int(input())
+    gift=int(input())
+    list1=list(map(int,input().split()))
+    list1.sort()
+    mini=sum(list1[:num])
+    print(mini)
